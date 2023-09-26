@@ -1,9 +1,13 @@
 #include "liblist.h"
+#include <stdio.h>
 
 int	main(void)
 {
-    write (1, "Hello World!\n", 13);
-    ft_lstnew()
+    t_list  *l;
 
+    l = ft_lstnew((void*)42);
+    printf("%ld\n",(long)(l->content));
+    printf("%ld\n",(long)(l->next));
+    printf("%d\n",(ft_lstsize(l)));
 	return (0);
 }

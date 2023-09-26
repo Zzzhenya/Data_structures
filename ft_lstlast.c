@@ -1,3 +1,5 @@
+#include "liblist.h"
+
 /*
 Returns the last node of the list.
 lst: The beginning of the list.

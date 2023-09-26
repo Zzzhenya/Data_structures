@@ -1,3 +1,5 @@
+#include "liblist.h"
+
 /*
 Adds the node ’new’ at the beginning of the list.
 lst: The address of a pointer to the first link of

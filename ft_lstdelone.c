@@ -1,3 +1,5 @@
+#include "liblist.h"
+
 /*
 Takes as a parameter a node and frees the memory of
 the node’s content using the function ’del’ given
@@ -9,5 +11,9 @@ the content.
 */
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-
+	if (!lst)
+		return (0);
+	if (del)
+		del(lst->content);
+	free (lst);
 }
