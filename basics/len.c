@@ -54,8 +54,6 @@ int ft_len(struct node *lst)
     int         len;
 
     len = 0;
-    if (!lst)
-        return (len);
     current = lst;
     while (current != NULL)
     {
@@ -73,5 +71,6 @@ int	main(void)
 	temp = NULL;
 	ptr = one_two_three();
 	printf("len: %d\n", ft_len(ptr));
+    printf("len: %d\n", ft_len(0));
 	return (0);
 }
