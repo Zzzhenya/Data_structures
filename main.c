@@ -9,5 +9,6 @@ int	main(void)
     printf("%ld\n",(long)(l->content));
     printf("%ld\n",(long)(l->next));
     printf("%d\n",(ft_lstsize(l)));
+    
 	return (0);
 }

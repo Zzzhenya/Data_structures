@@ -18,10 +18,17 @@ struct node	*one_two_three(void)
 		return (0);
 	second = malloc (sizeof(struct node));
 	if (!second)
+	{
+		free (head);
 		return (0);
+	}
 	third = malloc (sizeof(struct node));
 	if (!third)
+	{
+		free (second);
+		free (head);
 		return (0);
+	}
 	head->data = 1;
 	head->next = second;
 	second->data = 2;
