@@ -15,8 +15,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 	free(lst);
 	lst = NULL;
 }
-
-
+/*
 int main(void)
 {
 	t_list *head;
@@ -53,13 +52,6 @@ int main(void)
         current = current->next;
         size --;
     }
-    
-    /*
-    while (current != NULL)
-    {
-    	printf("%zu\n", (size_t)current->content);
-        current = current->next;
-    }
-    */
 	return (0);
 }
+*/
