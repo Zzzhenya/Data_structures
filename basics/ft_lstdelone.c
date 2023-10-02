@@ -1,16 +1,17 @@
 #include "liblist.h"
-
+/*
 void	del(void *ptr)
 {
 	if (ptr)
 	{
-		ptr = 0;
+        ptr = 0;
 	}
 }
+*/
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	del(lst->content);
+	(del)(lst->content);
 	free(lst);
 	lst = NULL;
 }
@@ -24,12 +25,15 @@ int main(void)
 	t_list	*last;
 	int   size;
 
+
 	head = ft_lstnew((void *)20);
-	head->next = ft_lstnew((void *)30);
-	*lst = head;
+    *lst = head;
+    head->next = ft_lstnew((void *)30);
 	ft_lstadd_front(lst, ft_lstnew((void *)10));
 	ft_lstadd_back(lst, ft_lstnew((void *)40));
+
     current = *lst;
+    
     size = ft_lstsize(*lst);
     printf("size: %d\n", size);
     while (current != NULL)
@@ -49,6 +53,7 @@ int main(void)
         current = current->next;
         size --;
     }
+    
     /*
     while (current != NULL)
     {
