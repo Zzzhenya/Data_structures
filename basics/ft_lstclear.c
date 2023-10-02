@@ -1,5 +1,5 @@
 #include "liblist.h"
-
+/*
 void	del(void *ptr)
 {
 	if (ptr)
@@ -7,19 +7,23 @@ void	del(void *ptr)
         ptr = 0;
 	}
 }
+*/
 
 void    ft_lstclear(t_list **lst, void (*del)(void*))
 {
-    t_list  *current;
+    t_list  *temp;
 
-    current = *lst;
-    while (current != NULL)
+    while (*lst)
     {
-        ft_delone(current, del);
-        current = current->next;
+        printf("del: %zu\n", (size_t)(*lst)->content);
+        (del)((*lst)->content);
+        temp = *lst;
+        *lst = temp->next;
+        free (temp);
     }
+    *lst = 0;
 }
-
+/*
 int main(void)
 {
 	t_list *head;
@@ -48,13 +52,10 @@ int main(void)
     printf("last: %zu\n", (size_t)(last->content));
     
     current = *lst;
-    ft_lstclear(head, del);
-    
-    while (size>0)
-    {
-    	printf("%zu\n", (size_t)current->content);
-        current = current->next;
-        size --;
-    }
+    ft_lstclear(&head, del);
+    printf("Current: %zu\n", (size_t)(current)->content);
+    current = current->next;
+    printf("Current: %zu\n", (size_t)(current)->content);
 	return (0);
 }
+*/
